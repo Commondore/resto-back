@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "restoraunts",
+  "info": {
+    "singularName": "restoraunt",
+    "pluralName": "restoraunts",
+    "displayName": "Рестораны",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "kategorii": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "restoranies"
+    },
+    "workhours": {
+      "type": "component",
+      "repeatable": false,
+      "component": "work-time.vremya-raboty"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "closed",
+        "opened",
+        "for repairs"
+      ]
+    },
+    "average": {
+      "type": "integer"
+    },
+    "user_info": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "restoranies"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_work_time_vremya_raboty",
+  "info": {
+    "displayName": "Время работы",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "start": {
+      "type": "string"
+    },
+    "end": {
+      "type": "string"
+    }
+  }
+}
